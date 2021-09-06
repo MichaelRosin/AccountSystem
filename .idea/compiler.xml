@@ -10,7 +10,7 @@
         <module name="AccountSystemTranslator" />
         <module name="AccountSystemLogic" />
         <module name="AccountSystemWeb" />
-        <module name="AccountSystemRespitory" />
+        <module name="AccountSystemRepository" />
       </profile>
     </annotationProcessing>
   </component>
