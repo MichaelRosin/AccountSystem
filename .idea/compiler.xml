@@ -13,5 +13,8 @@
         <module name="AccountSystemRepository" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="AccountSystemWebSpringBoot" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

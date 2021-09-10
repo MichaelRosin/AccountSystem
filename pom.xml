@@ -27,7 +27,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
                 <version>4.3.30.RELEASE</version>
             </dependency>
         </dependencies>
-    </dependencyManagement>
+    </dependencyManagement>g
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
