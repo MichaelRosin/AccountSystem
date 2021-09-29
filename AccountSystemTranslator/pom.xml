@@ -23,7 +23,7 @@
         </dependency>
         <dependency>
             <groupId>za.ac.nwu.ac</groupId>
-            <artifactId>AccountSystemRespitory</artifactId>
+            <artifactId>AccountSystemRepository</artifactId>
             <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>

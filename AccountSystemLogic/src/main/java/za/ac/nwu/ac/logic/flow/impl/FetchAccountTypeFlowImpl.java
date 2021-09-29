@@ -7,8 +7,6 @@ import za.ac.nwu.ac.logic.FetchAccountTypeFlow;
 import za.ac.nwu.ac.translator.AccountTypeTranslator;
 
 import javax.transaction.Transactional;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 @Transactional
@@ -27,5 +25,11 @@ public class FetchAccountTypeFlowImpl implements FetchAccountTypeFlow {
     public List<AccountTypeDto> getAllAccountTypes()
     {
         return accountTypeTranslator.getAllAccountTypes();
+    }
+
+    @Override
+    public AccountTypeDto getAccountTypeByMnemonic(String mnemonic)
+    {
+        return accountTypeTranslator.getAccountTypeDtoByMnemonic(mnemonic);
     }
 }

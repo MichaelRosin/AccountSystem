@@ -9,7 +9,7 @@ import java.util.Objects;
 
 
 @Entity
-@Table(name = "ACCOUNT_TRANSACTION", schema = "HR")
+@Table(name = "ACCOUNT_TRANSACTION", schema = "hr")
 
 
 public class AccountTransaction implements Serializable {
@@ -34,8 +34,8 @@ public class AccountTransaction implements Serializable {
     }
 
     @Id
-    @SequenceGenerator(name = "VIT_RSA_GENERIC_SEQ", sequenceName = "HR.VIT_RSA_GENERIC_SEQ", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "VIT_RSA_GENERIC_SEQ")
+    @SequenceGenerator(name = "ACCOUNT_TRANSACTION_SEQ", sequenceName = "HR.ACCOUNT_TRANSACTION_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ACCOUNT_TRANSACTION_SEQ")
     @Column(name = "TransactionID")
     private Long getTransactionId()
     {
