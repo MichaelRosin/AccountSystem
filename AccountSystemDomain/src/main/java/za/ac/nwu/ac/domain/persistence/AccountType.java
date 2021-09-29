@@ -4,26 +4,23 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
-@Table(name = "ACCOUNT_TYPE", schema = "HR")
+@Table(name = "ACCOUNT_TYPE", schema = "hr")
 
 public class AccountType implements Serializable{
 
-    @Id
-    @SequenceGenerator(name = "VIT_RSA_GENERIC_SEQ", sequenceName = "HR.VIT_RSA_GENERIC_SEQ", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "VIT_RSA_GENERIC_SEQ")
-    @Column(name = "Account_Type_ID")
+
     private Long accountTypeId;
 
-    @Column(name = "Mnemonic")
     private String mnemonic;
 
-    @Column(name = "Account_Type_Name")
     private String accountTypeName;
 
-    @Column(name = "Creation_Date")
     private LocalDate creationDate;
+
+    private Set<AccountTransaction> accountTransactions;
 
 
 
@@ -35,38 +32,47 @@ public class AccountType implements Serializable{
 
     }
 
+    public AccountType(String mnemonic, String accountTypeName, LocalDate creationDate)
+    {
+        this.mnemonic = mnemonic;
+        this.accountTypeName = accountTypeName;
+        this.creationDate = creationDate;
+    }
+
     public AccountType() {
 
     }
-
+    @Id
+    @SequenceGenerator(name = "ACCOUNT_TYPE_SEQ", sequenceName = "HR.ACCOUNT_TYPE_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ACCOUNT_TYPE_SEQ")
+    @Column(name = "Account_Type_ID")
     public Long getAccountTypeId() {
         return accountTypeId;
     }
-
     public void setAccountTypeId(Long accountTypeId) {
         this.accountTypeId = accountTypeId;
     }
 
+    @Column(name = "Mnemonic")
     public String getMnemonic() {
         return mnemonic;
     }
-
     public void setMnemonic(String mnemonic) {
         this.mnemonic = mnemonic;
     }
 
+    @Column(name = "Account_Type_Name")
     public String getAccountTypeName() {
         return accountTypeName;
     }
-
     public void setAccountTypeName(String accountTypeName) {
         this.accountTypeName = accountTypeName;
     }
 
+    @Column(name = "Creation_Date")
     public LocalDate getCreationDate() {
         return creationDate;
     }
-
     public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
     }
