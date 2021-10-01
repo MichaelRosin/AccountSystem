@@ -52,4 +52,9 @@ public interface AccountTypeRepository extends JpaRepository<AccountType, Long> 
     AccountTypeDto getAccountTypeDtoByMnemonic(String mnemonic);
 
 
+
+
+
+
+
 }
