@@ -1,4 +1,4 @@
-
+/*
 package za.ac.nwu.ac.web.sb.controller;
 import org.junit.Before;
 import org.junit.Test;
@@ -95,26 +95,8 @@ public class AccountTypeControllerTest {
         assertEquals(expectedResponse,
                 mvcResult.getResponse().getContentAsString());
     }
-    /*
-    @Test
-    public void deleteAccountType() throws Exception {
-        String expectedResponse = "{\"successful\":true,\"payload\":" +
-                "{\"mnemonic\":\"PLAY\",\"accountTypeName\":\"Play account type\",\"creationDate\":[2021,4,1]}}";
-        AccountTypeDto accountType = new AccountTypeDto("PLAY", "Play account type", LocalDate.parse("2021-04-01"));
 
-                when(modifyAccountTypeFlow.deleteAccountType(anyString())).thenReturn(accountType);
-        MvcResult mvcResult = mockMvc.perform(delete((String.format("%s/%s",
-                        ACCOUNT_TYPE_CONTROLLER_URL, "PLAY")))
-                        .servletPath(APP_URL)
-                        .accept(MediaType.APPLICATION_JSON)
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andReturn();
-        verify(modifyAccountTypeFlow,
-                times(1)).deleteAccountType(eq("PLAY"));
-        assertEquals(expectedResponse,
-                mvcResult.getResponse().getContentAsString());
-    }
+
     @Test
     public void updateAccountType() throws Exception {
         String expectedResponse = "{\"successful\":true,\"payload\":" +
@@ -178,5 +160,7 @@ public class AccountTypeControllerTest {
                 never()).updateAccountType(anyString(), isNull(), isNull());
     }
 
-     */
+
 }
+
+ */
