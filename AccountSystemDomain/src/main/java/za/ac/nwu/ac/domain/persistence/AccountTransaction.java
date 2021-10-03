@@ -33,32 +33,38 @@ public class AccountTransaction implements Serializable {
         this.transactionDate = transactionDate;
     }
 
+    public AccountTransaction(Long memberId, Long amount, LocalDate transactionDate) {
+        this.memberId = memberId;
+        this.amount = amount;
+        this.transactionDate = transactionDate;
+    }
+
     @Id
     @SequenceGenerator(name = "ACCOUNT_TRANSACTION_SEQ", sequenceName = "HR.ACCOUNT_TRANSACTION_SEQ", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ACCOUNT_TRANSACTION_SEQ")
     @Column(name = "TransactionID")
-    private Long getTransactionId()
+    public Long getTransactionId()
     {
         return transactionId;
     }
 
 
-    @Column(name = "MemberID")
-    private Long getMemberId()
+    @Column(name = "MemberId")
+    public Long getMemberId()
     {
         return memberId;
     }
 
 
     @Column(name = "Amount")
-    private Long getAmount()
+    public Long getAmount()
     {
         return amount;
     }
 
 
     @Column(name = "TransactionDate")
-    private LocalDate getTransactionDate()
+    public LocalDate getTransactionDate()
     {
         return transactionDate;
     }
@@ -101,7 +107,9 @@ public class AccountTransaction implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AccountTransaction that = (AccountTransaction) o;
-        return Objects.equals(transactionId, that.transactionId) && Objects.equals(accountTypeId, that.accountTypeId) && Objects.equals(memberId, that.memberId) && Objects.equals(amount, that.amount) && Objects.equals(transactionDate, that.transactionDate);
+        return Objects.equals(transactionId, that.transactionId) && Objects.equals(accountTypeId, that.accountTypeId) &&
+                Objects.equals(memberId, that.memberId) && Objects.equals(amount, that.amount) &&
+                Objects.equals(transactionDate, that.transactionDate);
     }
 
     @Override

@@ -33,4 +33,13 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
       </dependency>
 
   </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
