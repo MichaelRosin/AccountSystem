@@ -10,7 +10,7 @@ public interface AccountTransactionTranslator {
 
     AccountTransactionDto create(AccountTransactionDto accountType);
 
-    AccountTransactionDto getAccountTransactionDtoByMnemonic(Long memberID);
+    AccountTransactionDto getAccountTransactionDtoByMnemonic(Long memberId);
 
     AccountTransactionDto save(AccountTransaction accountTransaction);
 

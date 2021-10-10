@@ -1,4 +1,4 @@
-/*package za.ac.nwu.ac.domain.dto;
+package za.ac.nwu.ac.domain.dto;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,19 @@ class AccountTypeDtoTest {
         assertNull(accountTypeDto.getMnemonic());
     }
 
+    @Test
+    public void getAccountTypeName() {
+        AccountTypeDto accountTypeDto = new AccountTypeDto();
+        assertNull(accountTypeDto.getAccountTypeName());
+    }
+
+    @Test
+    public void getCreationDate() {
+        AccountTypeDto accountTypeDto = new AccountTypeDto();
+        assertNull(accountTypeDto.getCreationDate());
+    }
+
 
 }
-*/
+
 
