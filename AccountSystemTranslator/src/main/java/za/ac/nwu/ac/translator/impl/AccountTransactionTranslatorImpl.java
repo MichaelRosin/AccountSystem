@@ -52,10 +52,10 @@ public class AccountTransactionTranslatorImpl implements AccountTransactionTrans
 
 
     @Override
-    public AccountTransactionDto getAccountTransactionDtoByMnemonic(Long memberID)
+    public AccountTransactionDto getAccountTransactionDtoByMnemonic(Long memberId)
     {
         try{
-            return accountTransactionRepository.getAccountTransactionDtoByMnemonic(memberID);
+            return accountTransactionRepository.getAccountTransactionDtoByMnemonic(memberId);
         }
         catch (Exception e){
             throw new RuntimeException("Unable to read from the DB", e);

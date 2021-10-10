@@ -8,5 +8,5 @@ public interface FetchAccountTransactionFlow {
 
     List<AccountTransactionDto> getAllTransactionTypes();
 
-    AccountTransactionDto getAccountTransactionByMnemonic(Long memberID);
+    AccountTransactionDto getAccountTransactionByMnemonic(Long memberId);
 }

@@ -1,6 +1,5 @@
 package za.ac.nwu.ac.domain.dto;
 
-import za.ac.nwu.ac.domain.persistence.AccountType;
 import za.ac.nwu.ac.domain.persistence.AccountTransaction;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -17,7 +16,7 @@ public class AccountTransactionDto implements Serializable{
 
     private static final long serialVersionUID = -5346853206480289868L;
 
-    private Long memberID;
+    private Long memberId;
     private Long amount;
     private LocalDate transactionDate;
 
@@ -27,34 +26,35 @@ public class AccountTransactionDto implements Serializable{
 
     }
 
-    public AccountTransactionDto(Long memberID, Long amount, LocalDate transactionDate)
+    public AccountTransactionDto(Long memberId, Long amount, LocalDate transactionDate)
     {
-        this.memberID = memberID;
+        this.memberId = memberId;
         this.amount = amount;
         this.transactionDate = transactionDate;
     }
 
+
     public AccountTransactionDto(AccountTransaction accountTransaction)
     {
-        this.setMemberID(accountTransaction.getMemberId());
+        this.setMemberId(accountTransaction.getMemberId());
         this.setAmount(accountTransaction.getAmount());
         this.setTransactionDate(accountTransaction.getTransactionDate());
     }
 
     @ApiModelProperty(position = 1,
-            value = "AccountTransaction memberID",
-            name = "MemberID",
+            value = "AccountTransaction memberId",
+            name = "MemberId",
             notes = "Uniquely identifies the member",
             dataType = "java.lang.String",
             example = "123",
             required = true)
-    public Long getMemberID()
+    public Long getMemberId()
     {
-        return memberID;
+        return memberId;
     }
 
-    public void setMemberID(Long memberID) {
-        this.memberID = memberID;
+    public void setMemberId(Long memberId) {
+        this.memberId = memberId;
     }
 
     @ApiModelProperty(position = 2,
@@ -98,20 +98,20 @@ public class AccountTransactionDto implements Serializable{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AccountTransactionDto that = (AccountTransactionDto) o;
-        return Objects.equals(memberID, that.memberID) && Objects.equals(amount, that.amount) && Objects.equals(transactionDate, that.transactionDate);
+        return Objects.equals(memberId, that.memberId) && Objects.equals(amount, that.amount) && Objects.equals(transactionDate, that.transactionDate);
     }
 
 
    @JsonIgnore
     public AccountTransaction getTransactionType()
     {
-        return new AccountTransaction(getMemberID(), getAmount(),getTransactionDate());
+        return new AccountTransaction(getMemberId(), getAmount(),getTransactionDate());
     }
 
 
     @Override
     public int hashCode() {
-        return Objects.hash(memberID, amount, transactionDate);
+        return Objects.hash(memberId, amount, transactionDate);
     }
 
 
